@@ -10,3 +10,5 @@ First, install PyTorch. Then, run the following commands:
 ```bash
 pip install -r requirements.txt
 python setup.py develop
+```
+# If encounter any error then check models/team26_DAT/HAT_SRx4_ImageNet-LR.yml and change the paths accordingly
