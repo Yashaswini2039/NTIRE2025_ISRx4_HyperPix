@@ -1,0 +1,1 @@
+Add the low quality images in this folder 

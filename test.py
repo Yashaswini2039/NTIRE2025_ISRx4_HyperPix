@@ -21,6 +21,19 @@ def select_model(args, device):
         name = f"{model_id:02}_DAT_baseline"
         model_path = os.path.join('model_zoo', 'team00_dat.pth')
         model_func = DAT
+
+    elif model_id == 26:
+        import os.path as osp
+
+        import models.team26_DAT.archs
+        import models.team26_DAT.data
+        import models.team26_DAT.models
+        from models.team26_DAT.basicsr.test import test_pipeline
+
+        if __name__ == '__main__':
+            root_path = osp.abspath(osp.join(__file__, osp.pardir, osp.pardir))
+            test_pipeline(root_path)
+    
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
@@ -73,14 +86,14 @@ def main(args):
     # load model
     # --------------------------------
     model_func, model_path, model_name = select_model(args, device)
-    logger.info(model_name)
+    # logger.info(model_name)
 
-    # if model not in results:
-    if args.valid_dir is not None:
-        run(model_func, model_name, model_path, device, args, mode="valid")
+    # # if model not in results:
+    # if args.valid_dir is not None:
+    #     run(model_func, model_name, model_path, device, args, mode="valid")
         
-    if args.test_dir is not None:
-        run(model_func, model_name, model_path, device, args, mode="test")
+    # if args.test_dir is not None:
+    #     run(model_func, model_name, model_path, device, args, mode="test")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("NTIRE2025-ImageSRx4")
