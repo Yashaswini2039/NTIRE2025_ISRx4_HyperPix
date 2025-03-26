@@ -12,7 +12,7 @@ datasets:
   test_1:  # the 1st test dataset
     name: custom
     type: SingleImageDataset
-    dataroot_lq: ../../low_quality_data_input/
+    dataroot_lq: /content/NTIRE2025_ImageSR_x4_HyperPix/low_quality_data_input
     io_backend:
       type: disk
     phase: 'test' 
@@ -39,12 +39,12 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ../../model_zoo/team26_dat/HAT_SRx4_ImageNet-pretrain.pth
+  pretrain_network_g: /content/drive/MyDrive/Internship/NTIRE_2025/Pretrained_model/HAT_SRx4_ImageNet-pretrain.pth
   strict_load_g: true
   param_key_g: 'params_ema'
-  results_root: '/content/HAT/results/HAT_SRx4_ImageNet-LR'
-  log: '/content/HAT/logs/HAT_SRx4_ImageNet-LR'
-  visualization: '/content/HAT/visualization/HAT_SRx4_ImageNet-LR'
+  results_root: '/content/NTIRE2025_ImageSR_x4_HyperPix/Results'
+  log: '/content/NTIRE2025_ImageSR_x4_HyperPix/Results'
+  visualization: '/content/NTIRE2025_ImageSR_x4_HyperPix/Results'
 
 # validation settings
 val:

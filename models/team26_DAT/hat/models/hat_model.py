@@ -1,10 +1,10 @@
 import torch
 from torch.nn import functional as F
 
-from basicsr.utils.registry import MODEL_REGISTRY
-from basicsr.models.sr_model import SRModel
-from basicsr.metrics import calculate_metric
-from basicsr.utils import imwrite, tensor2img
+from models.team26_DAT.basicsr.utils.registry import MODEL_REGISTRY
+from models.team26_DAT.basicsr.models.sr_model import SRModel
+from models.team26_DAT.basicsr.metrics import calculate_metric
+from models.team26_DAT.basicsr.utils import imwrite, tensor2img
 
 import math
 from tqdm import tqdm
@@ -156,14 +156,14 @@ class HATModel(SRModel):
             if save_img:
                 if self.opt['is_train']:
                     save_img_path = osp.join(self.opt['path']['visualization'], img_name,
-                                             f'{img_name}_{current_iter}.png')
+                                             f'{img_name}.png')
                 else:
                     if self.opt['val']['suffix']:
                         save_img_path = osp.join(self.opt['path']['visualization'], dataset_name,
-                                                 f'{img_name}_{self.opt["val"]["suffix"]}.png')
+                                                 f'{img_name}.png')
                     else:
                         save_img_path = osp.join(self.opt['path']['visualization'], dataset_name,
-                                                 f'{img_name}_{self.opt["name"]}.png')
+                                                 f'{img_name}.png')
                 imwrite(sr_img, save_img_path)
 
             if with_metrics:

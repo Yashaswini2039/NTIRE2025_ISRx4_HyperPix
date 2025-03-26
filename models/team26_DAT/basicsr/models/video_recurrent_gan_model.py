@@ -1,10 +1,10 @@
 import torch
 from collections import OrderedDict
 
-from basicsr.archs import build_network
-from basicsr.losses import build_loss
-from basicsr.utils import get_root_logger
-from basicsr.utils.registry import MODEL_REGISTRY
+from models.team26_DAT.basicsr.archs import build_network
+from models.team26_DAT.basicsr.losses import build_loss
+from models.team26_DAT.basicsr.utils import get_root_logger
+from models.team26_DAT.basicsr.utils.registry import MODEL_REGISTRY
 from .video_recurrent_model import VideoRecurrentModel
 
 

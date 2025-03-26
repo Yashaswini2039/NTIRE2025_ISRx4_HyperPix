@@ -6,11 +6,11 @@ import torch
 from collections import OrderedDict
 from os import path as osp
 
-from basicsr.archs import build_network
-from basicsr.losses import build_loss
-from basicsr.losses.losses import g_path_regularize, r1_penalty
-from basicsr.utils import imwrite, tensor2img
-from basicsr.utils.registry import MODEL_REGISTRY
+from models.team26_DAT.basicsr.archs import build_network
+from models.team26_DAT.basicsr.losses import build_loss
+from models.team26_DAT.basicsr.losses.losses import g_path_regularize, r1_penalty
+from models.team26_DAT.basicsr.utils import imwrite, tensor2img
+from models.team26_DAT.basicsr.utils.registry import MODEL_REGISTRY
 from .base_model import BaseModel
 
 

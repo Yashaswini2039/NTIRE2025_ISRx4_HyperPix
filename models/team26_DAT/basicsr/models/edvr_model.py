@@ -1,5 +1,5 @@
-from basicsr.utils import get_root_logger
-from basicsr.utils.registry import MODEL_REGISTRY
+from models.team26_DAT.basicsr.utils import get_root_logger
+from models.team26_DAT.basicsr.utils.registry import MODEL_REGISTRY
 from .video_base_model import VideoBaseModel
 
 

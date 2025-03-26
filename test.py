@@ -25,14 +25,17 @@ def select_model(args, device):
     elif model_id == 26:
         import os.path as osp
 
-        import models.team26_DAT.archs
-        import models.team26_DAT.data
-        import models.team26_DAT.models
+        import models.team26_DAT.hat.archs
+        import models.team26_DAT.hat.data
+        import models.team26_DAT.hat.models
         from models.team26_DAT.basicsr.test import test_pipeline
 
         if __name__ == '__main__':
             root_path = osp.abspath(osp.join(__file__, osp.pardir, osp.pardir))
-            test_pipeline(root_path)
+            print (root_path)
+            # os.path.join(root_path,  )
+            test_pipeline(root_path, "/content/NTIRE2025_ImageSR_x4_HyperPix/models/team26_DAT/HAT_SRx4_ImageNet-LR.yml")
+            print ("Results generated!!!!!!!!!!!!!!")
     
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
@@ -86,14 +89,14 @@ def main(args):
     # load model
     # --------------------------------
     model_func, model_path, model_name = select_model(args, device)
-    # logger.info(model_name)
+    logger.info(model_name)
 
-    # # if model not in results:
-    # if args.valid_dir is not None:
-    #     run(model_func, model_name, model_path, device, args, mode="valid")
+    # if model not in results:
+    if args.valid_dir is not None:
+        run(model_func, model_name, model_path, device, args, mode="valid")
         
-    # if args.test_dir is not None:
-    #     run(model_func, model_name, model_path, device, args, mode="test")
+    if args.test_dir is not None:
+        run(model_func, model_name, model_path, device, args, mode="test")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("NTIRE2025-ImageSRx4")
