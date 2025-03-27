@@ -19,6 +19,13 @@ pip uninstall basicsr -y
 - line no. 45: results_root [insert the path of the result folder]
 - line no. 47: visualization  [insert the path of the result folder] (keep both results_root same as visualization)
 
+### Open test.py and modify the following lines:
+- line no: 37: add the path of the models/team26_DAT/HAT_SRx4_ImageNet-LR.yml 
+```bash
+test_pipeline(root_path, "<path to NTIRE2025_ISRx4_HyperPix/models/team26_DAT/HAT_SRx4_ImageNet-LR.yml>")
+```
+
+
 ### Run the testing script:
 ```bash
 python test.py --test_dir <path to low quality img folder> --model_id 26
