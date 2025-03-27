@@ -21,7 +21,7 @@ pip uninstall basicsr -y
 
 ### Run the testing script:
 ```bash
-python test.py 
+python test.py --test_dir <path to low quality img folder> --model_id 26
 ```
 (if encounter any error ignore it and run eval.py script)
 
